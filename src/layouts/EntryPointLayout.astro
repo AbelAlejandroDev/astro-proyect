@@ -17,8 +17,9 @@ const { title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
+  <Header />
   <body>
-    <!-- <Loading /> -->
+    <Loading />
     <slot />
   </body>
 
@@ -37,9 +38,8 @@ const { title } = Astro.props;
     }
     html {
       font-family: system-ui, sans-serif;
-      background: #13151a !important;
+      background: #13151a;
       background-size: 224px;
-      overflow-y: hidden
     }
     code {
       font-family:
