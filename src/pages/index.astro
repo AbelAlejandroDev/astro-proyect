@@ -6,12 +6,11 @@ import Formulario from "../components/Formulario";
 ---
 
 <Layout title="Welcome to GENESIS.">
-  <main class="content-presentation">
-    <div class="linear-gradient-1"></div>
+  <main>
     <div class="linear-gradient-2"></div>
     <header>
       <div class="flex justify-center items-center py-6">
-        <img src="logotipo.png" alt="Logo" width="100%" height="200px" />
+          <img class="logotipo" src="logotipo.png" alt="Logo" width="100%" height="200px"  class="z-10"/>
       </div>
     </header>
     <Video />
@@ -20,25 +19,16 @@ import Formulario from "../components/Formulario";
 </Layout>
 
 <style>
-  .content-presentation {
+  .logotipo {
     position: relative;
-    width: 100%;
+    display: block;
+    object-fit: cover;
     height: 100%;
-  }
-  .linear-gradient-1 {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 500px;
-    height: 520px;
-    background: radial-gradient(
-      at left center,
-      rgb(11, 20, 73),
-      transparent,
-      transparent
-    );
-    z-index: 0;
-  }
+    width: 100%;
+    filter: drop-shadow(10px -5px 30px #08316f) contrast(110%);
+    transition: 0.3s;
+    z-index: 100;
+  } 
   .linear-gradient-2 {
     position: absolute;
     right: 0;

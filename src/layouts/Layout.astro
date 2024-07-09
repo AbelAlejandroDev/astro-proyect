@@ -2,9 +2,8 @@
 interface Props {
   title: string;
 }
-import Loading from "../components/Loading.astro";
-import Header from "../components/Header.astro";
 const { title } = Astro.props;
+import "../styles/global.css";
 ---
 
 <!doctype html>
@@ -33,13 +32,19 @@ const { title } = Astro.props;
         rgb(var(--accent-light)) 30%,
         white 60%
       );
-	  --accent-genesis-gradient: linear-gradient(135deg, #003366, #0099cc, #00ccff, #003366);
+      --accent-genesis-gradient: linear-gradient(
+        135deg,
+        #003366,
+        #0099cc,
+        #00ccff,
+        #003366
+      );
     }
     html {
       font-family: system-ui, sans-serif;
       background: #13151a !important;
       background-size: 224px;
-      overflow-y: hidden
+      overflow-x: hidden;
     }
     code {
       font-family:
