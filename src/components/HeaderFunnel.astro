@@ -1,7 +1,16 @@
-<div class="bg-slate-950">
-  <div class="bg-red-400">
-  </div>
+<div class="bg-[#005FEA]">
   <div class="flex justify-center items-center p-4">
-    <img src="logotipo.png" height="260px" width="260px" alt="Logotipo" />
+    <img class="logotipo" src="logotipo.png" height="260px" width="260px" alt="Logotipo" />
   </div>
 </div>
+
+<style>
+  .logotipo {
+    position: relative;
+    display: block;
+    object-fit: cover;
+    filter: drop-shadow(20px -5px 20px #151a20) contrast(110%);
+    transition: 0.3s;
+    z-index: 100;
+  }
+</style>

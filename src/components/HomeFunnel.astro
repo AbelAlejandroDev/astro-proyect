@@ -1,0 +1,68 @@
+<section class="h-screen w-screen flex flex-col  items-center relative">
+    <div class="linear-gradient-2 absolute top-0 left-0 w-full h-full z-0"></div>
+    <div class="linear-gradient-1 absolute top-0 left-0 w-full h-full z-0"></div>
+    <div class="container-persentation relative z-10 flex flex-col items-center text-center h-full ">
+      <h1 class="py-4 text-xl">
+        <strong class="text-white antialiased text-3xl block">
+          OBTEN LA GUÍA COMPLETA PARA OPTIMIZAR TU PERFIL DE GOOGLE
+        </strong>
+        <span class="tracking-[2px] font-medium text-sm text-white antialiased py-2 block">
+          BY GENESIS <br> Author: Alfredo Ferras
+        </span>
+      </h1>
+      <figure class="py-4">
+        <img src="pdf-presentacion.png" alt="PDF GUIA COMPLETA PARA OPTIMIZAR TU PERFIL DE Google" class="w-40 h-auto">
+      </figure>
+      <div class="w-full flex justify-center py-4">
+        <div class="bg-[#005FEA] py-3 px-5 rounded-md animate-pulse cursor-pointer rocking">
+          <a class="text-center text-white" href="#">Obten nuestra guía gratuita</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <style>
+    html {
+      background-color: black !important;
+    }
+  
+    .container-persentation {
+      padding: 50px 20px;
+      max-width: 800px;
+    }
+  
+    /* Gradients */
+    .linear-gradient-1 {
+      background: radial-gradient(at left center, rgba(1, 190, 150, 0.5), transparent, transparent);
+    }
+    .linear-gradient-2 {
+      background: radial-gradient(at right center, rgba(36, 1, 190, 0.6), rgb(0, 0, 0), rgb(0, 0, 0));
+    }
+  
+    /* Responsive */
+    @media (max-width: 900px) {
+      .container-persentation {
+        padding: 20px 10px;
+      }
+    }
+  
+    @media (max-width: 500px) {
+      .linear-gradient-1 {
+        display: none;
+      }
+    }
+  
+    /* Rocking Animation */
+    @keyframes rocking {
+      0% { transform: rotate(0deg); }
+      25% { transform: rotate(4deg); }
+      50% { transform: rotate(0deg); }
+      75% { transform: rotate(-2deg); }
+      100% { transform: rotate(0deg); }
+    }
+  
+    .rocking {
+      animation: rocking 1.5s infinite;
+    }
+  </style>
+  
