@@ -1,23 +1,40 @@
-html::-webkit-scrollbar {
-  background-color: #46465e;
-  width: 10px;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-html::-webkit-scrollbar-thumb {
-  background-color: #01be96;
-  border-radius: 20px;
-  width: 10px;
+html {
+  margin: 0;
+  scroll-behavior: smooth;
+  font-family: system-ui, sans-serif;
+  overflow-x: hidden;
 }
 
-.group[data-has-value="true"] .group-data-\[has-value\=true\]\:text-foreground {
-  --tw-text-opacity: 1;
-  color: hsl(
-    var(--nextui-foreground) /
-      var(--nextui-foreground-opacity, var(--tw-text-opacity))
+code {
+  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+    Bitstream Vera Sans Mono, Courier New, monospace;
+}
+
+
+
+/* Gradients */
+.linear-gradient-2 {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    at center,
+    rgba(36, 1, 190, 0.6),
+    rgb(0, 0, 0),
+    rgb(0, 0, 0)
   );
-  color: white;
+  z-index: 0;
 }
 
+/* Form */
 .form-step {
   position: absolute;
   width: 100%;
@@ -39,17 +56,11 @@ html::-webkit-scrollbar-thumb {
   height: 200px; /* Adjust the height based on your input fields */
 }
 
-.linear-gradient-2 {
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(
-    at  center,
-    rgba(36, 1, 190, 0.6),
-    rgb(0, 0, 0),
-    rgb(0, 0, 0)
+.group[data-has-value="true"] .group-data-\[has-value\=true\]\:text-foreground {
+  --tw-text-opacity: 1;
+  color: hsl(
+    var(--nextui-foreground) /
+      var(--nextui-foreground-opacity, var(--tw-text-opacity))
   );
-  z-index: 0;
+  color: white;
 }

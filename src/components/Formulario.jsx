@@ -78,7 +78,7 @@ const Form = () => {
   };
 
   return (
-    <div className="flex justify-center py-4">
+    <div className="flex justify-center py-4 z-10">
       <form className="w-full max-w-md" onKeyDown={handleKeyDown}>
         <div className="form-container">
           <div className={`form-step ${getFormClass(1)}`}>
