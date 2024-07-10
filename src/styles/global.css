@@ -1,16 +1,21 @@
 @font-face {
-  font-family: "Neue Haas Grotesk";
-  src: url("fonts/NeueHaasGrotesk-Regular.woff2") format("woff2"),
-    url("fonts/NeueHaasGrotesk-Regular.woff") format("woff");
-  font-weight: normal;
+  font-family: 'Neue Haas Grotesk';
+  src: url('fonts/NeueHaasDisplayBlack.ttf') format('truetype');
+  font-weight: 900;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "Neue Haas Grotesk";
-  src: url("fonts/NeueHaasGrotesk-Bold.woff2") format("woff2"),
-    url("fonts/NeueHaasGrotesk-Bold.woff") format("woff");
+  font-family: 'Neue Haas Grotesk';
+  src: url('fonts/NeueHaasDisplayBold.ttf') format('truetype');
   font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Neue Haas Grotesk';
+  src: url('fonts/NeueHaasDisplayMedium.ttf') format('truetype');
+  font-weight: normal;
   font-style: normal;
 }
 
@@ -23,7 +28,7 @@
 html {
   margin: 0;
   scroll-behavior: smooth;
-  font-family: "Neue Haas Grotesk", sans-serif;
+  font-family: 'Neue Haas Grotesk', sans-serif;
   overflow-x: hidden;
 }
 
