@@ -52,34 +52,3 @@ code {
   );
   z-index: 0;
 }
-
-/* Form */
-.form-step {
-  position: absolute;
-  width: 100%;
-  transition: opacity 0.5s ease-in-out;
-}
-
-.hidden-form {
-  opacity: 0;
-  pointer-events: none;
-}
-
-.visible-form {
-  opacity: 1;
-  pointer-events: all;
-}
-
-.form-container {
-  position: relative;
-  height: 200px; /* Adjust the height based on your input fields */
-}
-
-.group[data-has-value="true"] .group-data-\[has-value\=true\]\:text-foreground {
-  --tw-text-opacity: 1;
-  color: hsl(
-    var(--nextui-foreground) /
-      var(--nextui-foreground-opacity, var(--tw-text-opacity))
-  );
-  color: white;
-}
