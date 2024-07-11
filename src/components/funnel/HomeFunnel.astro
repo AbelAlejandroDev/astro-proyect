@@ -1,5 +1,5 @@
 ---
-import FormFunnel from "../components/FormFunnel";
+import FormFunnel from "./FormFunnel"
 ---
 
 <section class="h-screen w-screen flex flex-col  items-center relative">
@@ -8,17 +8,17 @@ import FormFunnel from "../components/FormFunnel";
     <div class="container-persentation relative z-10 flex flex-col items-center text-center h-full ">
       <h1 class="py-4 text-xl">
         <strong class="text-white antialiased text-3xl block">
-          OBTEN LA GUÍA COMPLETA PARA OPTIMIZAR TU PERFIL DE GOOGLE
+          OBTÉN LA GUÍA COMPLETA PARA OPTIMIZAR TU PERFIL DE GOOGLE
         </strong>
         <span class="tracking-[2px] font-medium text-sm text-white antialiased py-2 block">
           BY GENESIS <br> Author: Alfredo Ferras
         </span>
       </h1>
       <figure class="py-4">
-        <img src="pdf-presentacion.png"  alt="PDF GUIA COMPLETA PARA OPTIMIZAR TU PERFIL DE Google" class="w-40  drop-shadow-[0_10px_35px_rgba(255,255,255,0.5)]">
+        <img src="/pdf-presentacion.png"  alt="PDF GUIA COMPLETA PARA OPTIMIZAR TU PERFIL DE Google" class="w-40  drop-shadow-[0_10px_35px_rgba(255,255,255,0.5)]">
       </figure>
       <div class="w-full flex justify-center py-4">
-        <div class="bg-[#005FEA] py-3 px-5 rounded-md animate-pulse cursor-pointer rocking">
+        <div class="bg-[#005FEA] py-3 px-5 rounded-md  cursor-pointer">
           <a class="text-center text-white" href="#obtener-guia-gratutita-form">Obten nuestra guía gratuita</a>
         </div>
       </div>
@@ -57,17 +57,8 @@ import FormFunnel from "../components/FormFunnel";
       }
     }
   
-    /* Rocking Animation */
-    @keyframes rocking {
-      0% { transform: rotate(0deg); }
-      25% { transform: rotate(4deg); }
-      50% { transform: rotate(0deg); }
-      75% { transform: rotate(-2deg); }
-      100% { transform: rotate(0deg); }
-    }
+    
   
-    .rocking {
-      animation: rocking 1.5s infinite;
-    }
+    
   </style>
   

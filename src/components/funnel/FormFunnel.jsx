@@ -6,13 +6,8 @@ const Form = () => {
     name: "",
     email: "",
     phone: "",
+    bussines: "",
   });
-  const [errors, setErrors] = useState({
-    name: false,
-    email: false,
-    phone: false,
-  });
-
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -25,32 +20,15 @@ const Form = () => {
     });
   };
 
-  const validateEmail = (email) => {
-    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return re.test(String(email).toLowerCase());
-  };
-
-  const validatePhone = (phone) => {
-    const re = /^\+?(\d.*){3,}$/; // Allows for international phone numbers with or without "+" prefix
-    return re.test(String(phone));
-  };
-
-  const handleKeyDown = (e) => {
-    if (e.key === "Enter") {
-      e.preventDefault();
-      handleNext();
-    }
-  };
-
   return (
     <section className="flex justify-center items-center flex-col w-[90%] py-4 z-10 ">
       <div className=" bg-[#005FEA] max-w-md flex flex-col mb-[-20px] text-white antialiased w-full py-4 rounded-t-2xl text-xl text-center font-medium">
         <h3 className="flex justify-center gap-2 items-center py-4 ">
           <img className="h-8" src="/arrowDown.svg" />
-          Llena el formulario <img className="h-8" src="/arrowDown.svg" />
+          Obtén ya la guía <img className="h-8" src="/arrowDown.svg" />
         </h3>
         <small className="text-xs tracking-[1px] my-1 rounded-b-sm p-1 py-2 bg-[#221E42]">
-          Completa los campos para obtener la guía
+          Donde la enviamos?
         </small>
       </div>
       <form
@@ -65,9 +43,8 @@ const Form = () => {
             value={formData.name}
             onChange={handleChange}
             variant="faded"
-            label="Nombre"
+            placeholder="Nombre*"
             required
-            isInvalid={errors.name}
             errorMessage={"Introduzca su nombre"}
             classNames={{
               label: "text-black/50 dark:text-white/90",
@@ -96,9 +73,8 @@ const Form = () => {
             value={formData.email}
             onChange={handleChange}
             variant="faded"
-            isInvalid={errors.email}
             errorMessage="Introduzca un email válido para continuar"
-            label="Email"
+            placeholder="Email*"
             required
             classNames={{
               label: "text-black/50 dark:text-white/90",
@@ -129,9 +105,8 @@ const Form = () => {
             value={formData.phone}
             onChange={handleChange}
             variant="faded"
-            label="Teléfono"
+            placeholder="Teléfono*"
             required
-            isInvalid={errors.phone}
             errorMessage="Introduzca un teléfono válido para continuar"
             classNames={{
               label: "text-black/50 dark:text-white/90",
@@ -155,14 +130,47 @@ const Form = () => {
               ],
             }}
           />
-          <Button
-            color="default"
-            className="mt-5 flex justify-end"
-            variant="shadow"
-            type="submit"
-          >
-            Obtener Guía Gratuita
-          </Button>
+          <span className="text-xl my-2">Opcional</span>
+          <Input
+            type="text"
+            id="bussines"
+            name="bussines"
+            value={formData.bussines}
+            onChange={handleChange}
+            variant="faded"
+            placeholder=" Negocio que tiene o Deséa abrir*"
+            classNames={{
+              label: "text-black/50 dark:text-white/90",
+              input: [
+                "bg-transparent",
+                "text-black/90 dark:text-white/90",
+                "placeholder:text-default-700/50 dark:placeholder:text-white/60",
+              ],
+              innerWrapper: "bg-transparent",
+              inputWrapper: [
+                "shadow-xl",
+                "bg-default-200/50",
+                "dark:bg-default/60",
+                "backdrop-blur-xl",
+                "backdrop-saturate-200",
+                "hover:bg-default-200/70",
+                "dark:hover:bg-default/70",
+                "group-data-[focus=true]:bg-default-200/50",
+                "dark:group-data-[focus=true]:bg-default/60",
+                "!cursor-text",
+              ],
+            }}
+          />
+          <div className="mt-3 flex justify-end items-center">
+            <Button
+              color="primary"
+              className="rocking  "
+              variant="shadow"
+              type="submit"
+            >
+              Obtener Guía Gratuita
+            </Button>
+          </div>
         </div>
       </form>
     </section>
