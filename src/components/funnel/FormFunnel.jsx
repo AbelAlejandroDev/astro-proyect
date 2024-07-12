@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Button, Input } from "@nextui-org/react";
+import axios from "axios";
 
 const Form = () => {
   const [formData, setFormData] = useState({
@@ -8,6 +9,14 @@ const Form = () => {
     phone: "",
     bussines: "",
   });
+
+  const [errors, setErrors] = useState({
+    name: false,
+    email: false,
+    phone: false,
+    bussines: false,
+  });
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -18,6 +27,21 @@ const Form = () => {
       ...errors,
       [name]: false,
     });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post('http://tu-dominio.com:3000/send-email', formData);
+      if (response.data.success) {
+        alert('Mensaje enviado con éxito!');
+      } else {
+        alert('Error al enviar el mensaje.');
+      }
+    } catch (error) {
+      console.error('Error al enviar el mensaje:', error);
+      alert('Error al enviar el mensaje.');
+    }
   };
 
   return (
@@ -34,6 +58,7 @@ const Form = () => {
       <form
         id="obtener-guia-gratutita-form"
         className="w-[100%] sm:w-full max-w-md bg-gray-200 p-8 rounded-b-2xl shadow-xl"
+        onSubmit={handleSubmit}
       >
         <div className="form-container">
           <Input
@@ -138,7 +163,7 @@ const Form = () => {
             value={formData.bussines}
             onChange={handleChange}
             variant="faded"
-            placeholder=" Negocio que tiene o Deséa abrir*"
+            placeholder="Negocio que tiene o desea abrir*"
             classNames={{
               label: "text-black/50 dark:text-white/90",
               input: [
@@ -164,7 +189,7 @@ const Form = () => {
           <div className="mt-3 flex justify-end items-center">
             <Button
               color="primary"
-              className="rocking  "
+              className="rocking"
               variant="shadow"
               type="submit"
             >

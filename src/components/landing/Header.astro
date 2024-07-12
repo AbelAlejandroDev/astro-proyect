@@ -1,0 +1,144 @@
+<header>
+  <div class="bg-black p-4">
+    <div class="flex items-center justify-between">
+      <img class="h-8" src="/logotipo.png" alt="Logotipo" />
+      <div class="h-8 cursor-pointer" id="hamburger">
+        <svg
+          id="hamburger-svg"
+          xmlns="http://www.w3.org/2000/svg"
+          width="2rem"
+          height="2rem"
+          viewBox="0 0 24 24"
+        >
+          <g fill="none" stroke="white" stroke-linecap="round" stroke-width="1">
+            <path id="path1" d="M5 5L19 5">
+              <animate
+                id="line1"
+                fill="freeze"
+                attributeName="d"
+                begin="indefinite"
+                dur="0.4s"
+                values="M5 5L19 5;M5 5L19 19"></animate>
+            </path>
+            <path id="path2" d="M5 12H19">
+              <animate
+                id="line2"
+                fill="freeze"
+                attributeName="d"
+                begin="indefinite"
+                dur="0.4s"
+                values="M5 12H19;M12 12H12"></animate>
+              <set
+                id="setLine2"
+                attributeName="opacity"
+                begin="indefinite"
+                to="0"></set>
+            </path>
+            <path id="path3" d="M5 19L19 19">
+              <animate
+                id="line3"
+                fill="freeze"
+                attributeName="d"
+                begin="indefinite"
+                dur="0.4s"
+                values="M5 19L19 19;M5 19L19 5"></animate>
+            </path>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="menu" id="menu">
+  <nav class="p-4 text-white">
+    <a href="#home" class="block py-2">Home</a>
+    <a href="#about" class="block py-2">About</a>
+    <a href="#services" class="block py-2">Services</a>
+    <a href="#contact" class="block py-2">Contact</a>
+  </nav>
+</div>
+
+<style>
+  .menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 75%;
+    height: 100%;
+    background-color: black;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 9;
+  }
+  .menu.open {
+    transform: translateX(0);
+  }
+  #hamburger {
+      position: relative;
+      z-index: 10; /* Higher z-index to be above the menu */
+    }
+</style>
+
+<script>
+    // Función para cerrar el menú y restaurar la animación del SVG
+    function closeMenuAndResetAnimation() {
+      const menu = document.getElementById('menu');
+      const line1 = document.getElementById('line1');
+      const line2 = document.getElementById('line2');
+      const setLine2 = document.getElementById('setLine2');
+      const line3 = document.getElementById('line3');
+
+      if (menu.classList.contains('open')) {
+        menu.classList.remove('open');
+        line1.setAttribute('values', 'M5 5L19 19;M5 5L19 5');
+        line2.setAttribute('values', 'M12 12H12;M5 12H19');
+        setLine2.setAttribute('to', '1');
+        line3.setAttribute('values', 'M5 19L19 5;M5 19L19 19');
+
+        // Reiniciar las animaciones
+        line1.beginElement();
+        line2.beginElement();
+        setLine2.beginElement();
+        line3.beginElement();
+      }
+    }
+
+    // Evento de clic en el área fuera del menú
+    document.addEventListener('click', function(event) {
+      const menu = document.getElementById('menu');
+      const hamburger = document.getElementById('hamburger');
+
+      // Si se hace clic fuera del menú y el menú está abierto, cerrarlo
+      if (!menu.contains(event.target) && !hamburger.contains(event.target)) {
+        closeMenuAndResetAnimation();
+      }
+    });
+
+    // Evento de clic en el ícono de hamburguesa
+    document.getElementById('hamburger').addEventListener('click', function() {
+      const menu = document.getElementById('menu');
+      menu.classList.toggle('open');
+
+      const line1 = document.getElementById('line1');
+      const line2 = document.getElementById('line2');
+      const setLine2 = document.getElementById('setLine2');
+      const line3 = document.getElementById('line3');
+
+      if (menu.classList.contains('open')) {
+        line1.setAttribute('values', 'M5 5L19 5;M5 5L19 19');
+        line2.setAttribute('values', 'M5 12H19;M12 12H12');
+        setLine2.setAttribute('to', '0');
+        line3.setAttribute('values', 'M5 19L19 19;M5 19L19 5');
+      } else {
+        line1.setAttribute('values', 'M5 5L19 19;M5 5L19 5');
+        line2.setAttribute('values', 'M12 12H12;M5 12H19');
+        setLine2.setAttribute('to', '1');
+        line3.setAttribute('values', 'M5 19L19 5;M5 19L19 19');
+      }
+
+      line1.beginElement();
+      line2.beginElement();
+      setLine2.beginElement();
+      line3.beginElement();
+    });
+  </script>
