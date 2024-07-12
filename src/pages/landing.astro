@@ -1,8 +1,19 @@
 ---
-import Header from "../components/landing/Header.astro";
-import Layout from "../layouts/Layout.astro";
+import About from "../components/landing/About.astro";
+import HeaderDesk from "../components/landing/HeaderDesk.astro";
+import Header from "../components/landing/HeaderMobile.astro";
+import Works from "../components/landing/Works.astro";
+import LayoutLanding from "../layouts/LayoutLanding.astro";
 ---
 
-<Layout title="Welcome to GENESIS.">
-<Header/>
-</Layout>
+<LayoutLanding title="Welcome to GENESIS.">
+  <header>
+    <Header />
+    <HeaderDesk />
+  </header>
+  <section class="md:flex-1 md:p-8">
+    
+  </section>
+  <!-- <About/> -->
+  <Works />
+</LayoutLanding>
