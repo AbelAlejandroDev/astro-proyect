@@ -1,0 +1,72 @@
+---
+---
+
+<article class="text-white bg-[#151515] py-6 ">
+  <article class="lg:mr-80">
+    <div class="container px-5 mx-auto">
+      <h2 class="font-bold text-xl lg:text-3xl text-center">
+        Descubre Cómo Actualizar tu Perfil de Google de <strong class="text-blue-300">Forma Gratuita</strong> con Nuestra
+        Guía Completa y Detallada
+      </h2>
+    </div>
+    <div class="flex justify-center items-center" id="image-container">
+      <div class="bg-[#151515] p-4 ml-9 rounded-lg">
+        <img src="/mockup-guia-gratuita.png" 
+        alt="mockup guía gratuita" 
+        class="max-w-96 h-auto" />
+      </div>
+    </div>
+    <div class="flex justify-center mb-8">
+      <a href="" class="py-2 px-6 bg-blue-600 rounded-lg flex items-center gap-2 hover:bg-blue-700 hover:gap-4 transition">
+        Obtener la guía ahora
+        <img src="/arrows-right.svg" class="h-4 svg-transition" >
+      </a>
+    </div>
+  </article>
+</article>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-bounceIn');
+        }
+      });
+    }, { threshold: 0.5 });
+
+    const imageContainer = document.getElementById('image-container');
+    observer.observe(imageContainer);
+  });
+</script>
+
+<style>
+  @keyframes bounceIn {
+    0% {
+      transform: scale(0.1);
+      opacity: 0;
+    }
+    50% {
+      transform: scale(1.05);
+      opacity: 1;
+    }
+    70% {
+      transform: scale(0.9);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  .animate-bounceIn {
+    animation: bounceIn 0.8s ease-in-out forwards;
+  }
+
+  .svg-transition {
+    transition: transform 0.3s ease-in-out;
+  }
+
+  a:hover .svg-transition {
+    transform: translateX(5px);
+  }
+</style>
