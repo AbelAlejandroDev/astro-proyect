@@ -7,7 +7,12 @@ export default {
     "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      spacing:{
+        '388':'388px',
+        '300':'300px'
+      }
+    },
   },
   darkMode:"class",
   plugins: [nextui()],
