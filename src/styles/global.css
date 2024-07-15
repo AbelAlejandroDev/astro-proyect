@@ -79,7 +79,7 @@ code {
   }
 }
 
-
+/* Carousel */
 .carousel {
   position: relative;
   width: 100%;
@@ -111,3 +111,23 @@ code {
   }
 }
 
+.neon-button {
+  position: relative;
+  padding: 0.5rem 1rem;
+  color: #fff;
+  background: #2563eb;
+  border: none;
+  border-radius: 9999px;
+  box-shadow: 0 0 5px #2563eb, 0 0 10px #2563eb, 0 0 20px #2563eb, 0 0 40px #2563eb;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.neon-button:hover {
+  box-shadow: 0 0 10px #2563eb, 0 0 20px #2563eb, 0 0 40px #2563eb, 0 0 60px #2563eb;
+}
+
+.text-small {
+  font-size: var(--nextui-font-size-small);
+  line-height: var(--nextui-line-height-small);
+  color: white !important;
+}
