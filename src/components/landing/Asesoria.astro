@@ -1,0 +1,66 @@
+<article id="advisory" class="text-white bg-[#252323] lg:pr-64 py-8 ">
+    <div class="px-5 ">
+      <h2 class="font-bold pt-4 text-2xl text-white antialiased lg:text-4xl text-center">
+        CREA Y OPTIMIZA TU NEGOCIO DE LA MANO DE UN ESPECIALISTA
+      </h2>
+    </div>
+    <div class="flex justify-center items-center" id="image-container">
+      <div class="bg-[#252323] p-4  rounded-lg">
+        <img src="/asesoria_edit.png" 
+        alt="mockup guía gratuita" 
+        class="sm:max-w-[450px] h-auto" />
+      </div>
+    </div>
+    <div class="flex justify-center  mt-4 mb-8">
+      <a href="" class="py-2 px-8 bg-blue-600 rounded-lg flex items-center justify-center gap-2 text-xl md:text-2xl hover:bg-blue-700 hover:gap-4 transition">
+        AGENDAR CITA 
+        <img src="/icons/calendar.svg" class="h-5 md:h-6 svg-transition" >
+      </a>
+    </div>
+</article>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-bounceIn');
+        }
+      });
+    }, { threshold: 0.5 });
+
+    const imageContainer = document.getElementById('image-container');
+    observer.observe(imageContainer);
+  });
+</script>
+
+<style>
+  @keyframes bounceIn {
+    0% {
+      transform: scale(0.1);
+      opacity: 0;
+    }
+    50% {
+      transform: scale(1.0);
+      opacity: 1;
+    }
+    70% {
+      transform: scale(0.9);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  .animate-bounceIn {
+    animation: bounceIn 0.8s ease-in-out forwards;
+  }
+
+  .svg-transition {
+    transition: transform 0.3s ease-in-out;
+  }
+
+  a:hover .svg-transition {
+    transform: translateX(5px);
+  }
+</style>
