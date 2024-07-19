@@ -16,7 +16,7 @@ export const FormSuscripction = () => {
           radius="full"
           type="email"
           placeholder="Introduce tu email"
-          className="max-w-72 sm:max-w-80 md:max-w-96"
+          className="max-w-72 sm:max-w-[400px]"
           onChange={handleChange}
           value={email}
         />
