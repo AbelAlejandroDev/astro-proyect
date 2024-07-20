@@ -14,7 +14,7 @@
         <li class="li-nav font-bold py-4 text-xl">Trabajos</li>
       </a>
 
-      <a href="#services">
+      <a href="#promo-guia">
         <li class="li-nav font-bold py-4 text-xl">Servicios</li>
       </a>
       <a href="#advisory">
@@ -27,6 +27,7 @@
 <style>
   .li-nav {
     position: relative;
+    display: inline-block;
     list-style: none;
     color: #f6f6f9;
     transition: 0.3s;
@@ -38,10 +39,10 @@
     width: 0%;
     background-color: #221e42;
     bottom: 10px;
+    transition: width 0.4s; 
   }
   .li-nav:hover::before {
-    width: 40%;
-    transition: 0.4s;
+    width: 100%;
   }
   .li-nav:hover {
     color: #221e42;
