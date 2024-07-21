@@ -12,8 +12,21 @@ import "../styles/global.css";
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
     <meta name="generator" content={Astro.generator} />
+    <meta
+      name="description"
+      content="Una descripción clara y concisa de la página que ayudará a los usuarios a comprender de qué trata el contenido y por qué deben visitarla."
+    />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:title" content="{title}" />
+    <meta
+      property="og:description"
+      content="Una descripción clara y concisa de la página."
+    />
+    <meta property="og:image" content="/favicon.png" />
+    <meta property="og:url" content="https://www.genesisdma.com.com" />
+
     <title>{title}</title>
   </head>
   <body class="lg:inline bg-[#151515]">
