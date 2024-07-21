@@ -1,10 +1,26 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import IntroAnimation from "../components/IntroAnimation.astro";
+import Asesoria from "../components/landing/Asesoria.astro";
+import Footer from "../components/landing/Footer.astro";
+import HeaderDesk from "../components/landing/HeaderDesk.astro";
+import Header from "../components/landing/HeaderMobile.astro";
+import Home from "../components/landing/Home.astro";
+import Promo from "../components/landing/Promo.astro";
+import Works from "../components/landing/Works.astro";
 import Loading from "../components/Loading.astro";
+import LayoutLanding from "../layouts/LayoutLanding.astro";
 ---
 
-<Layout title="Welcome to GENESIS.">
-  <Loading/>
-  <IntroAnimation/>
-</Layout>
+<LayoutLanding title="Welcome to GENESIS.">
+  <Loading />
+  <header>
+    <Header />
+    <HeaderDesk />
+  </header>
+  <section class="lg:ml-80">
+    <Home />
+    <Works />
+    <Promo />
+    <Asesoria />
+    <Footer />
+  </section>
+</LayoutLanding>
