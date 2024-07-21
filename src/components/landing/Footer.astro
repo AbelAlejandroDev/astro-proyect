@@ -1,5 +1,6 @@
 ---
-import { FormSuscripction } from "./FormSuscripction";
+import {FormSuscription} from '../../components/landing/FormSuscripction'
+import FormSuscriptionMailChimp from './FormSuscriptionMailChimp.astro'
 ---
 
 <footer class="bg-gradient-to-b from-[#252323] to-[#050505] ">
@@ -11,7 +12,7 @@ import { FormSuscripction } from "./FormSuscripction";
     </span>
   </div>
   <!-- Form -->
-  <FormSuscripction client:visible />
+   <FormSuscriptionMailChimp/>
   <!-- Redes Sociales -->
   <div>
     <ul class="flex justify-center items-center gap-4 pt-6">
