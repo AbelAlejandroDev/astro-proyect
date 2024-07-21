@@ -70,13 +70,13 @@ const Form = () => {
             variant="faded"
             placeholder="Nombre*"
             required
+            className=""
             errorMessage={"Introduzca su nombre"}
             classNames={{
-              label: "text-black/50 dark:text-white/90",
+              label: "text-black/50 dark:text-black/90",
               input: [
                 "bg-transparent",
-                "text-black/90 dark:text-white/90",
-                "placeholder:text-default-700/50 dark:placeholder:text-white/60",
+                "placeholder:text-default-700/50 dark:placeholder:text-black/60",
               ],
               innerWrapper: "bg-transparent",
               inputWrapper: [

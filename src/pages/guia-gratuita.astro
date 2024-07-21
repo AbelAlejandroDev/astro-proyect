@@ -1,10 +1,12 @@
 ---
 import HeaderFunnel from "../components/guia-gratuita/HeaderFunnel.astro";
 import HomeFunnel from "../components/guia-gratuita/HomeFunnel.astro";
+import Loading from "../components/Loading.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Obten la guia gratuita de Genesis">
+  <Loading />
   <HeaderFunnel />
   <HomeFunnel />
 </Layout>
