@@ -14,7 +14,7 @@ import FormFunnel from "./FormFunnel"
           BY GENESIS <br> Author: Alfredo Ferras
         </span>
       </h1>
-      <figure class="py-4">
+      <figure class="py-4" id="image-container">
         <img src="/pdf-presentacion.png"  alt="PDF GUIA COMPLETA PARA OPTIMIZAR TU PERFIL DE Google" class="w-40  drop-shadow-[0_10px_35px_rgba(255,255,255,0.5)]">
       </figure>
       <div class="w-full flex justify-center py-4">
@@ -25,7 +25,23 @@ import FormFunnel from "./FormFunnel"
     </div>
     <FormFunnel/>
   </section>
-  
+    
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-bounceIn');
+        }
+      });
+    }, { threshold: 0.5 });
+
+    const imageContainer = document.getElementById('image-container');
+    observer.observe(imageContainer);
+  });
+  </script>
+
+
   <style>
     html {
       background-color: black !important;
@@ -57,8 +73,26 @@ import FormFunnel from "./FormFunnel"
       }
     }
   
-    
+    @keyframes bounceIn {
+    0% {
+      transform: scale(0.1);
+      opacity: 0;
+    }
+    50% {
+      transform: scale(1.0);
+      opacity: 1;
+    }
+    70% {
+      transform: scale(0.9);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  .animate-bounceIn {
+    animation: bounceIn 3s ease-in-out forwards;
+  }
   
-    
   </style>
   
