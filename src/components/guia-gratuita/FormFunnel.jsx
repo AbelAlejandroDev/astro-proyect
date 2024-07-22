@@ -45,7 +45,7 @@ const Form = () => {
   };
 
   return (
-    <section className="flex justify-center items-center flex-col w-[90%] py-4 z-10 ">
+    <section className="flex justify-center items-center flex-col w-[90%] py-4 z-10 pb-12">
       <div className=" bg-[#005FEA] max-w-md flex flex-col mb-[-20px] text-white antialiased w-full py-4 rounded-t-2xl text-xl text-center font-medium">
         <h3 className="flex justify-center gap-2 items-center py-4 ">
           <img className="h-8" src="/icons/arrowDown.svg" />
