@@ -163,7 +163,7 @@ const Form = () => {
             value={formData.bussines}
             onChange={handleChange}
             variant="faded"
-            placeholder="Negocio que tiene o desea abrir*"
+            placeholder="Negocio que tiene o desea abrir"
             classNames={{
               label: "text-black/50 dark:text-white/90",
               input: [
@@ -189,7 +189,7 @@ const Form = () => {
           <div className="mt-3 flex justify-end items-center">
             <Button
               color="primary"
-              className="rocking"
+              className="rocking btn"
               variant="shadow"
               type="submit"
             >

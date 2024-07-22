@@ -144,3 +144,7 @@ code {
     font-size: var(--nextui-font-size-small);
     line-height: var(--nextui-line-height-small);
     color: black !important;}
+
+.btn{
+  color: white !important;
+}
