@@ -118,7 +118,7 @@ const Form = () => {
       </form>
       {loading && ( // Mostrar el indicador de carga si está en estado de carga
         <div className="mt-4">
-          <p>Enviando...</p>
+          <p className="text-white text-2xl">Enviando...</p>
         </div>
       )}
     </section>
