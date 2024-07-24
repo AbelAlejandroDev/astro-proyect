@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Button, Input } from "@nextui-org/react";
 import axios from "axios";
 
 const Form = () => {
@@ -9,13 +8,7 @@ const Form = () => {
     phone: "",
     bussines: "",
   });
-
-  const [errors, setErrors] = useState({
-    name: false,
-    email: false,
-    phone: false,
-    bussines: false,
-  });
+  const [loading, setLoading] = useState(false); // Estado para el indicador de carga
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -23,31 +16,34 @@ const Form = () => {
       ...formData,
       [name]: value,
     });
-    setErrors({
-      ...errors,
-      [name]: false,
-    });
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault(); // Prevenir recarga de la página
+    e.preventDefault();
+    setLoading(true); // Activar el indicador de carga
+
     try {
       const response = await axios.post(
-        'https://genesisdma.com/api/send_mail.php',
+        "https://genesisdma.com/api/send_mail.php",
         formData
       );
-      if (response.data.status === 'success') {
-        alert('Mensaje enviado con éxito!');
-        // Redireccionamos a la pagina de agradecimiento
+
+      console.log("Response received", response);
+
+      if (response.data.status === "success") {
+        alert("Mensaje enviado con éxito!");
+        // Redireccionamos a la página de agradecimiento
         setTimeout(() => {
-          window.location.href='/thank-you'
+          window.location.href = "/thank-you";
         }, 1500);
       } else {
-        alert('Error al enviar el mensaje.');
+        alert("Error al enviar el mensaje.");
       }
     } catch (error) {
-      console.error('Error al enviar el mensaje:', error);
-      alert('Error al enviar el mensaje.');
+      console.error("Error al enviar el mensaje:", error);
+      alert("Error al enviar el mensaje.");
+    } finally {
+      setLoading(false); // Desactivar el indicador de carga
     }
   };
 
@@ -56,7 +52,8 @@ const Form = () => {
       <div className="bg-[#005FEA] max-w-md flex flex-col mb-[-20px] text-white antialiased w-full py-4 rounded-t-2xl text-xl text-center font-medium">
         <h3 className="flex justify-center gap-2 items-center py-4">
           <img className="h-8" src="/icons/arrowDown.svg" alt="arrow down" />
-          Obtén ya la guía <img className="h-8" src="/icons/arrowDown.svg" alt="arrow down" />
+          Obtén ya la guía{" "}
+          <img className="h-8" src="/icons/arrowDown.svg" alt="arrow down" />
         </h3>
         <small className="text-xs tracking-[1px] my-1 rounded-b-sm p-1 py-2 bg-[#221E42]">
           ¿Dónde la enviamos?
@@ -68,142 +65,62 @@ const Form = () => {
         onSubmit={handleSubmit}
       >
         <div className="form-container">
-          <Input
+          <input
             type="text"
             id="name"
             name="name"
             value={formData.name}
             onChange={handleChange}
-            variant="faded"
             placeholder="Nombre*"
             required
-            errorMessage="Introduzca su nombre"
-            classNames={{
-              label: "text-black/50 dark:text-black/90",
-              input: [
-                "bg-transparent",
-                "placeholder:text-default-700/50 dark:placeholder:text-black/60",
-              ],
-              innerWrapper: "bg-transparent",
-              inputWrapper: [
-                "shadow-xl",
-                "backdrop-blur-xl",
-                "backdrop-saturate-200",
-                "hover:bg-default-200/70",
-                "dark:hover:bg-default/70",
-                "group-data-[focus=true]:bg-default-200/50",
-                "dark:group-data-[focus=true]:bg-default/60",
-                "!cursor-text",
-              ],
-            }}
+            className="bg-transparent border border-gray-300 rounded-xl shadow-xl p-3 mb-4 w-full placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
-          <Input
+          <input
             type="email"
             id="email"
             name="email"
             value={formData.email}
             onChange={handleChange}
-            variant="faded"
-            errorMessage="Introduzca un email válido para continuar"
             placeholder="Email*"
             required
-            classNames={{
-              label: "text-black/50 dark:text-white/90",
-              input: [
-                "bg-transparent",
-                "text-black/90 dark:text-white/90",
-                "placeholder:text-default-700/50 dark:placeholder:text-white/60",
-              ],
-              innerWrapper: "bg-transparent",
-              inputWrapper: [
-                "shadow-xl",
-                "bg-default-200/50",
-                "dark:bg-default/60",
-                "backdrop-blur-xl",
-                "backdrop-saturate-200",
-                "hover:bg-default-200/70",
-                "dark:hover:bg-default/70",
-                "group-data-[focus=true]:bg-default-200/50",
-                "dark:group-data-[focus=true]:bg-default/60",
-                "!cursor-text",
-              ],
-            }}
+            className="bg-transparent border border-gray-300 rounded-xl shadow-xl p-3 mb-4 w-full placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
-          <Input
+          <input
             type="tel"
             id="phone"
             name="phone"
             value={formData.phone}
             onChange={handleChange}
-            variant="faded"
             placeholder="Teléfono*"
             required
-            errorMessage="Introduzca un teléfono válido para continuar"
-            classNames={{
-              label: "text-black/50 dark:text-white/90",
-              input: [
-                "bg-transparent",
-                "text-black/90 dark:text-white/90",
-                "placeholder:text-default-700/50 dark:placeholder:text-white/60",
-              ],
-              innerWrapper: "bg-transparent",
-              inputWrapper: [
-                "shadow-xl",
-                "bg-default-200/50",
-                "dark:bg-default/60",
-                "backdrop-blur-xl",
-                "backdrop-saturate-200",
-                "hover:bg-default-200/70",
-                "dark:hover:bg-default/70",
-                "group-data-[focus=true]:bg-default-200/50",
-                "dark:group-data-[focus=true]:bg-default/60",
-                "!cursor-text",
-              ],
-            }}
+            className="bg-transparent border border-gray-300 rounded-xl shadow-xl p-3 mb-4 w-full placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
           <span className="text-xl my-2">Opcional</span>
-          <Input
+          <input
             type="text"
             id="bussines"
             name="bussines"
             value={formData.bussines}
             onChange={handleChange}
-            variant="faded"
             placeholder="Negocio que tiene o desea abrir"
-            classNames={{
-              label: "text-black/50 dark:text-white/90",
-              input: [
-                "bg-transparent",
-                "text-black/90 dark:text-white/90",
-                "placeholder:text-default-700/50 dark:placeholder:text-white/60",
-              ],
-              innerWrapper: "bg-transparent",
-              inputWrapper: [
-                "shadow-xl",
-                "bg-default-200/50",
-                "dark:bg-default/60",
-                "backdrop-blur-xl",
-                "backdrop-saturate-200",
-                "hover:bg-default-200/70",
-                "dark:hover:bg-default/70",
-                "group-data-[focus=true]:bg-default-200/50",
-                "dark:group-data-[focus=true]:bg-default/60",
-                "!cursor-text",
-              ],
-            }}
+            className="bg-transparent border border-gray-300 rounded-xl shadow-xl p-3 mb-4 w-full placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
-          <div className="mt-3 flex justify-end items-center">
-            <Button
-              color="primary"
-              className="rocking btn"
-              variant="shadow"
+          <div className="mt-4 flex justify-end items-center">
+            <button
               type="submit"
+              className="py-2 rocking btn bg-[#006FEE] text-white text-[14px] font-semibold px-4 rounded-xl neon-shadow hover:bg-opacity-85 transition-all duration-300"
+              disabled={loading} // Deshabilitar el botón mientras se carga
             >
               Obtener Guía Gratuita
-            </Button>
+            </button>
           </div>
         </div>
       </form>
+      {loading && ( // Mostrar el indicador de carga si está en estado de carga
+        <div className="mt-4">
+          <p>Enviando...</p>
+        </div>
+      )}
     </section>
   );
 };

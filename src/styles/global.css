@@ -20,9 +20,9 @@
 }
 
 @font-face {
-  font-family: 'Bebas Neue';
-  src: url('/fonts/BebasNeue-Regular.ttf') format('woff2'),
-       url('/fonts/BebasNeue-Regular.ttf') format('woff');
+  font-family: "Bebas Neue";
+  src: url("/fonts/BebasNeue-Regular.ttf") format("woff2"),
+    url("/fonts/BebasNeue-Regular.ttf") format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -33,7 +33,7 @@
   box-sizing: border-box;
 }
 
-html { 
+html {
   margin: 0;
   scroll-behavior: smooth;
   font-family: "Neue Haas Grotesk", sans-serif;
@@ -57,9 +57,6 @@ code {
     rgba(36, 1, 190, 0.925),
     rgb(0, 0, 0),
     rgb(0, 0, 0)
-
-
-
   );
   z-index: 0;
 }
@@ -126,12 +123,14 @@ code {
   background: #2563eb;
   border: none;
   border-radius: 9999px;
-  box-shadow: 0 0 5px #2563eb, 0 0 10px #2563eb, 0 0 20px #2563eb, 0 0 40px #2563eb;
+  box-shadow: 0 0 5px #2563eb, 0 0 10px #2563eb, 0 0 20px #2563eb,
+    0 0 40px #2563eb;
   transition: box-shadow 0.3s ease-in-out;
 }
 
 .neon-button:hover {
-  box-shadow: 0 0 10px #2563eb, 0 0 20px #2563eb, 0 0 40px #2563eb, 0 0 60px #2563eb;
+  box-shadow: 0 0 10px #2563eb, 0 0 20px #2563eb, 0 0 40px #2563eb,
+    0 0 60px #2563eb;
 }
 
 .text-small {
@@ -140,11 +139,13 @@ code {
   color: white !important;
 }
 
-  .text-small {
-    font-size: var(--nextui-font-size-small);
-    line-height: var(--nextui-line-height-small);
-    color: black !important;}
+.text-small {
+  font-size: var(--nextui-font-size-small);
+  line-height: var(--nextui-line-height-small);
+  color: black !important;
+}
 
-.btn{
-  color: white !important;
+.btn {
+  box-shadow: 0 0 6px rgba(0, 123, 255, 0.5), 0 0 12px rgba(0, 123, 255, 0.4),
+    0 0 18px rgba(0, 123, 255, 0.3), 0 0 24px rgba(0, 123, 255, 0.2);
 }
