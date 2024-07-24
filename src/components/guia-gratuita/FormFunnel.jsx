@@ -32,8 +32,8 @@ const Form = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://tu-dominio.com:3000/send-email', formData);
-      if (response.data.success) {
+      const response = await axios.post('https://genesisdma.com/api/send_mail.php', formData);
+      if (response.data.status === 'success') {
         alert('Mensaje enviado con éxito!');
       } else {
         alert('Error al enviar el mensaje.');
@@ -52,7 +52,7 @@ const Form = () => {
           Obtén ya la guía <img className="h-8" src="/icons/arrowDown.svg" />
         </h3>
         <small className="text-xs tracking-[1px] my-1 rounded-b-sm p-1 py-2 bg-[#221E42]">
-          Donde la enviamos?
+          ¿Dónde la enviamos?
         </small>
       </div>
       <form
@@ -70,8 +70,7 @@ const Form = () => {
             variant="faded"
             placeholder="Nombre*"
             required
-            className=""
-            errorMessage={"Introduzca su nombre"}
+            errorMessage="Introduzca su nombre"
             classNames={{
               label: "text-black/50 dark:text-black/90",
               input: [
