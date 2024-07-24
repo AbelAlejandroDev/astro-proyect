@@ -30,11 +30,18 @@ const Form = () => {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    e.preventDefault(); // Prevenir recarga de la página
     try {
-      const response = await axios.post('https://genesisdma.com/api/send_mail.php', formData);
+      const response = await axios.post(
+        'https://genesisdma.com/api/send_mail.php',
+        formData
+      );
       if (response.data.status === 'success') {
         alert('Mensaje enviado con éxito!');
+        // Redireccionamos a la pagina de agradecimiento
+        setTimeout(() => {
+          window.location.href='/thank-you'
+        }, 1500);
       } else {
         alert('Error al enviar el mensaje.');
       }
@@ -46,10 +53,10 @@ const Form = () => {
 
   return (
     <section className="flex justify-center items-center flex-col w-[90%] py-4 z-10 pb-12">
-      <div className=" bg-[#005FEA] max-w-md flex flex-col mb-[-20px] text-white antialiased w-full py-4 rounded-t-2xl text-xl text-center font-medium">
-        <h3 className="flex justify-center gap-2 items-center py-4 ">
-          <img className="h-8" src="/icons/arrowDown.svg" />
-          Obtén ya la guía <img className="h-8" src="/icons/arrowDown.svg" />
+      <div className="bg-[#005FEA] max-w-md flex flex-col mb-[-20px] text-white antialiased w-full py-4 rounded-t-2xl text-xl text-center font-medium">
+        <h3 className="flex justify-center gap-2 items-center py-4">
+          <img className="h-8" src="/icons/arrowDown.svg" alt="arrow down" />
+          Obtén ya la guía <img className="h-8" src="/icons/arrowDown.svg" alt="arrow down" />
         </h3>
         <small className="text-xs tracking-[1px] my-1 rounded-b-sm p-1 py-2 bg-[#221E42]">
           ¿Dónde la enviamos?
