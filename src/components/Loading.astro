@@ -5,7 +5,7 @@ import IntroAnimation from "./IntroAnimation.astro";
 <div id="loading" class="loading">
   <!-- <div class="spinner"></div> -->
   <IntroAnimation />
-  <p>Cargando...</p>
+ 
 </div>
 
 <script>
@@ -17,7 +17,7 @@ import IntroAnimation from "./IntroAnimation.astro";
     setTimeout(() => {
       loading.classList.add("hidden");
       htmlDocument.style.overflow = "auto";
-    }, 1200);
+    }, 500);
   });
 </script>
 

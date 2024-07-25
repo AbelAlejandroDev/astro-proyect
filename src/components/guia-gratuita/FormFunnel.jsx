@@ -34,8 +34,8 @@ const Form = () => {
         alert("Mensaje enviado con éxito!");
         // Redireccionamos a la página de agradecimiento
         setTimeout(() => {
-          window.location.href = "/thank-you";
-        }, 1500);
+          window.location.href = "/thanks-you";
+        }, 1200);
       } else {
         alert("Error al enviar el mensaje.");
       }
