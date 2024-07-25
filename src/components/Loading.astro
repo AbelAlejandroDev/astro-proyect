@@ -1,15 +1,23 @@
+---
+import IntroAnimation from "./IntroAnimation.astro";
+---
+
 <div id="loading" class="loading">
-  <div class="spinner"></div>
+  <!-- <div class="spinner"></div> -->
+  <IntroAnimation />
   <p>Cargando...</p>
 </div>
 
 <script>
   const loading = document.getElementById("loading");
+  const htmlDocument = document.documentElement;
+  htmlDocument.style.overflow = "hidden";
 
   window.addEventListener("load", function () {
     setTimeout(() => {
       loading.classList.add("hidden");
-    }, 800);
+      htmlDocument.style.overflow = "auto";
+    }, 1200);
   });
 </script>
 
