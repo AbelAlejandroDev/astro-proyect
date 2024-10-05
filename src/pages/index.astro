@@ -1,13 +1,14 @@
 ---
-import Asesoria from "../components/landing/Asesoria.astro";
-import Footer from "../components/landing/Footer.astro";
-import HeaderDesk from "../components/landing/HeaderDesk.astro";
-import Header from "../components/landing/HeaderMobile.astro";
-import Home from "../components/landing/Home.astro";
-import Promo from "../components/landing/Promo.astro";
-import Works from "../components/landing/Works.astro";
-import Loading from "../components/Loading.astro";
-import LayoutLanding from "../layouts/LayoutLanding.astro";
+import Asesoria from '../components/landing/Asesoria.astro';
+import Footer from '../components/landing/Footer.astro';
+import HeaderDesk from '../components/landing/HeaderDesk.astro';
+import Header from '../components/landing/HeaderMobile.astro';
+import Home from '../components/landing/Home.astro';
+import Promo from '../components/landing/Promo.astro';
+import Works from '../components/landing/Works.astro';
+import TelegramGroup from '../components/landing/TelegramGroup.astro';
+import Loading from '../components/Loading.astro';
+import LayoutLanding from '../layouts/LayoutLanding.astro';
 ---
 
 <LayoutLanding title="Welcome to GENESIS.">
@@ -18,6 +19,7 @@ import LayoutLanding from "../layouts/LayoutLanding.astro";
   </header>
   <section class="lg:ml-80">
     <Home />
+    <TelegramGroup />
     <Works />
     <Promo />
     <Asesoria />

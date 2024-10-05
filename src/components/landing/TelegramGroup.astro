@@ -1,0 +1,76 @@
+<article id="telegram-Group" class="text-white bg-[#151515] py-6">
+  <div
+    class="relative h-[400px] xl:h-[400px] w-full bg-auto bg-center bg-[url('/Grupo-2.png')] mt-[-10px] sm:mt-0 flex flex-col justify-center items-center"
+  >
+    <!--  Fondo lineal abajo -->
+    <div
+      class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-b from-transparent to-[#151515]"
+    >
+    </div>
+    <div class="px-5">
+      <h2 class="font-bold text-3xl lg:text-3xl text-center">
+        Únete a <br />
+        <strong class="text-blue-600 text-4xl">Mi Comunidad de Telegram</strong>
+      </h2>
+    </div>
+    <div class="flex justify-center my-14">
+      <a
+        href="https://t.me/genesisdma"
+        class="py-2 px-6 bg-blue-600 rounded-lg flex items-center gap-2 hover:bg-blue-700 hover:gap-4 transition"
+      >
+        Únete Ya
+
+        <img src="/icons/telegram.png" class="h-4 svg-transition" />
+      </a>
+    </div>
+  </div>
+</article>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-bounceIn');
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    const imageContainer = document.getElementById('image-container');
+    observer.observe(imageContainer);
+  });
+</script>
+
+<style>
+  @keyframes bounceIn {
+    0% {
+      transform: scale(0.1);
+      opacity: 0;
+    }
+    50% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    70% {
+      transform: scale(0.9);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  .animate-bounceIn {
+    animation: bounceIn 0.8s ease-in-out forwards;
+  }
+
+  .svg-transition {
+    transition: transform 0.3s ease-in-out;
+  }
+
+  a:hover .svg-transition {
+    transform: translateX(5px);
+  }
+</style>
