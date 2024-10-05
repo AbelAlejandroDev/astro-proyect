@@ -1,39 +1,38 @@
-<article id="promo-guia" class="text-white bg-[#151515] py-6 ">
-    <div class="px-5 ">
-      <h1 class="font-bold text-xl lg:text-3xl text-center">
-        Descubre Cómo Actualizar tu Perfil de Google de <strong class="text-blue-300">Forma Gratuita</strong> con Nuestra
-        Guía Completa y Detallada
-      </h1>
-    </div>
-    <div class="flex justify-center items-center" id="image-container">
-      <div class="bg-[#151515] p-4 ml-9 rounded-lg">
-        <img src="/mockup-guia-gratuita.png" 
-        alt="mockup guía gratuita" 
-        class="sm:max-w-96 h-auto" />
-      </div>
-    </div>
-    <div class="flex justify-center mb-8">
-      <a href="/guia-gratuita" class="py-2 px-6 bg-blue-600 rounded-lg flex items-center gap-2 hover:bg-blue-700 hover:gap-4 transition">
-        Obtener la guía ahora
-        <img src="/icons/arrows-right.svg" class="h-4 svg-transition" >
-      </a>
-    </div>
-</article>
+---
+
+---
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('animate-bounceIn');
-        }
-      });
-    }, { threshold: 0.5 });
-
-    const imageContainer = document.getElementById('image-container');
-    observer.observe(imageContainer);
-  });
+ 
 </script>
+
+<article id="promo-guia" class="text-white bg-[#151515] py-6">
+  <div class="px-5">
+    <h1 class="font-bold text-xl lg:text-3xl text-center">
+      Descubre Cómo Actualizar tu Perfil de Google de <strong
+        class="text-blue-300">Forma Gratuita</strong
+      > con Nuestra Guía Completa y Detallada
+    </h1>
+  </div>
+  <div class="flex justify-center items-center" id="image-container">
+    <div class="bg-[#151515] p-4 ml-9 rounded-lg">
+      <img
+        src="/mockup-guia-gratuita.png"
+        alt="mockup guía gratuita"
+        class="sm:max-w-96 h-auto"
+      />
+    </div>
+  </div>
+  <div class="flex justify-center mb-8">
+    <a
+      href="/guia-gratuita"
+      class="py-2 px-6 bg-blue-600 rounded-lg flex items-center gap-2 hover:bg-blue-700 hover:gap-4 transition"
+    >
+      Obtener la guía ahora
+      <img src="/icons/arrows-right.svg" class="h-4 svg-transition" />
+    </a>
+  </div>
+</article>
 
 <style>
   @keyframes bounceIn {
@@ -42,7 +41,7 @@
       opacity: 0;
     }
     50% {
-      transform: scale(1.0);
+      transform: scale(1);
       opacity: 1;
     }
     70% {

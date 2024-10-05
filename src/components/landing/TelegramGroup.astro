@@ -1,3 +1,7 @@
+---
+
+---
+
 <article id="telegram-Group" class="text-white bg-[#151515] py-6">
   <div
     class="relative h-[400px] xl:h-[400px] w-full bg-auto bg-center bg-[url('/Grupo-2.png')] mt-[-10px] sm:mt-0 flex flex-col justify-center items-center"
@@ -8,7 +12,7 @@
     >
     </div>
     <div class="px-5">
-      <h2 class="font-bold text-3xl lg:text-3xl text-center">
+      <h2 class="font-bold text-3xl lg:text-3xl text-center fade-up">
         Únete a <br />
         <strong class="text-blue-600 text-4xl">Mi Comunidad de Telegram</strong>
       </h2>
@@ -27,20 +31,19 @@
 </article>
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('animate-bounceIn');
-          }
-        });
-      },
-      { threshold: 0.5 }
-    );
+  const fadeElements = document.querySelectorAll('.fade-up');
 
-    const imageContainer = document.getElementById('image-container');
-    observer.observe(imageContainer);
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('fade-up-active');
+        observer.unobserve(entry.target); // Desvincula el observer una vez que se activa la animación
+      }
+    });
+  });
+
+  fadeElements.forEach((element) => {
+    observer.observe(element); // Observa cada uno de los elementos
   });
 </script>
 

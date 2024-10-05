@@ -3,7 +3,7 @@ interface Props {
   title: string;
 }
 const { title } = Astro.props;
-import "../styles/global.css";
+import '../styles/global.css';
 ---
 
 <!doctype html>
@@ -14,10 +14,7 @@ import "../styles/global.css";
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.png" />
     <meta name="generator" content={Astro.generator} />
-    <meta
-      name="description"
-      content=""
-    />
+    <meta name="description" content="" />
     <meta name="robots" content="index, follow" />
     <meta property="og:title" content="{title}" />
     <meta
@@ -31,5 +28,21 @@ import "../styles/global.css";
   </head>
   <body class="lg:inline bg-[#151515]">
     <slot />
+    <script>
+      const fadeElements = document.querySelectorAll('.fade-up');
+
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('fade-up-active');
+            observer.unobserve(entry.target); // Desvincula el observer una vez que se activa la animación
+          }
+        });
+      });
+
+      fadeElements.forEach((element) => {
+        observer.observe(element); // Observa cada uno de los elementos
+      });
+    </script>
   </body>
 </html>
