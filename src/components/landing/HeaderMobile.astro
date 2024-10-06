@@ -17,8 +17,7 @@
               attributeName="d"
               begin="indefinite"
               dur="0.4s"
-              values="M5 5L19 5;M5 5L19 19"
-            ></animate>
+              values="M5 5L19 5;M5 5L19 19"></animate>
           </path>
           <path id="path2" d="M5 12H19">
             <animate
@@ -27,13 +26,8 @@
               attributeName="d"
               begin="indefinite"
               dur="0.4s"
-              values="M5 12H19;M12 12H12"
-            ></animate>
-            <set
-              id="setLine2"
-              attributeName="opacity"
-              begin="indefinite"
-              to="0"
+              values="M5 12H19;M12 12H12"></animate>
+            <set id="setLine2" attributeName="opacity" begin="indefinite" to="0"
             ></set>
           </path>
           <path id="path3" d="M5 19L19 19">
@@ -43,8 +37,7 @@
               attributeName="d"
               begin="indefinite"
               dur="0.4s"
-              values="M5 19L19 19;M5 19L19 5"
-            ></animate>
+              values="M5 19L19 19;M5 19L19 5"></animate>
           </path>
         </g>
       </svg>
@@ -55,14 +48,11 @@
 <div class="menu lg:hidden" id="menu">
   <nav class="p-4 mt-16 text-white" id="nav-links">
     <a href="#home" class="block font-bold py-2">Inicio</a>
-    <a href="#telegram-Group" class="block font-bold py-2">
-      Comunidad
-     </a>
+    <a href="#telegram-Group" class="block font-bold py-2"> Comunidad </a>
     <a href="#works" class="block font-bold py-2">Trabajos</a>
-    <a href="#promo-guia" class="block font-bold py-2">
-     Guía
-    </a>
+    <a href="#promo-guia" class="block font-bold py-2"> Guía </a>
     <a href="#advisory" class="block font-bold py-2">Servicios</a>
+    <a href="#evento-zoom" class="block font-bold py-2">Eventos</a>
   </nav>
 </div>
 
@@ -73,10 +63,12 @@
     right: 0;
     width: 75%;
     height: 100%;
-    background-color: #005FEA;
+    background-color: #005fea;
     transform: translateX(100%);
     opacity: 0;
-    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    transition:
+      transform 0.3s ease-in-out,
+      opacity 0.3s ease-in-out;
     z-index: 998;
   }
   .menu.open {
@@ -112,7 +104,7 @@
     }
   }
 
-  document.addEventListener('click', function(event) {
+  document.addEventListener('click', function (event) {
     const menu = document.getElementById('menu');
     const hamburger = document.getElementById('hamburger');
 
@@ -121,7 +113,7 @@
     }
   });
 
-  document.getElementById('hamburger').addEventListener('click', function() {
+  document.getElementById('hamburger').addEventListener('click', function () {
     const menu = document.getElementById('menu');
     menu.classList.toggle('open');
 
@@ -149,9 +141,11 @@
   });
 
   // Adding event listener to the nav links
-  document.getElementById('nav-links').addEventListener('click', function(event) {
-    if (event.target.tagName === 'A') {
-      closeMenuAndResetAnimation();
-    }
-  });
+  document
+    .getElementById('nav-links')
+    .addEventListener('click', function (event) {
+      if (event.target.tagName === 'A') {
+        closeMenuAndResetAnimation();
+      }
+    });
 </script>

@@ -1,0 +1,136 @@
+---
+
+---
+
+<article id="evento-zoom" class="bg-[#11181C] py-8 relative">
+  <h2
+    class="font-bold p-4 text-2xl text-white antialiased lg:text-4xl text-center"
+  >
+    ¡Realiza tu preinscripción ahora!
+    <strong class="text-blue-600 text-3xl">
+      Quedan
+      <strong class="underline" id="availableSpotsDisplay"></strong>
+    </strong>
+    <br /> lugares disponibles para una clase gratuita por Zoom.
+  </h2>
+  <p class="text-white text-center mb-5 md:px-32">
+    Rellena el formulario a continuación con tu correo electrónico y número de
+    teléfono para asegurar tu lugar.
+  </p>
+  <form id="myForm" class="flex flex-col justify-center items-center flex-wrap">
+    <div class="flex items-center">
+      <div class="flex flex-row flex-wrap gap-5">
+        <input
+          type="email"
+          name="email"
+          class="required email text-white px-4 bg-transparent border-[2px] rounded-full py-[6px] w-[288px] mx-auto suscription-responsive"
+          placeholder="Correo electrónico *"
+          required
+        />
+        <input
+          type="text"
+          name="phone"
+          class="required phone text-white px-4 bg-transparent border-[2px] rounded-full py-[6px] w-[288px] mx-auto suscription-responsive"
+          placeholder="Número Teléfonico *"
+          required
+        />
+      </div>
+    </div>
+    <button
+      class="mt-5 text-white border-l-0 z-10 bg-[#2563EB] rounded-full neon-button cursor-pointer"
+      type="submit"
+    >
+      Inscribirse
+    </button>
+    <p id="statusMessage" class="text-white my-6">
+      Inscritos: <span id="countDisplay">0</span>/100
+    </p>
+  </form>
+  <div
+    class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-b from-transparent to-[#151515]"
+  >
+  </div>
+  <!-- Boton Flotante hacia el evento -->
+  <!-- <div class="fixed top-0 right-0 mt-24 mr-4 min-w-8 z-[9998]">
+    <a
+      href="#evento-zoom"
+      id="floatButtonZoom"
+      class="rounded-full p-4 text-white bg-blue-700 shadow-lg hover:bg-blue-600 hover:shadow-2xl"
+    >
+    </a>
+  </div> -->
+</article>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('myForm');
+    const statusMessage = document.getElementById('statusMessage');
+    const countDisplay = document.getElementById('countDisplay');
+    const availableSpotsDisplay = document.getElementById(
+      'availableSpotsDisplay'
+    );
+    const countFloatButtonZoom = document.getElementById('floatButtonZoom');
+    const maxCount = 100;
+    let count = 0;
+
+    // Función para obtener el número de inscripciones actuales
+    async function fetchCurrentCount() {
+      try {
+        const response = await fetch(
+          'http://localhost/geminis_mail_dispacher/api/get_count.php'
+        );
+        const data = await response.json();
+
+        if (data.success) {
+          count = data.count;
+          countDisplay.textContent = count;
+          availableSpotsDisplay.textContent = 100 - count;
+          countFloatButtonZoom.textContent = `${100 - count}`;
+        }
+      } catch (error) {
+        console.error('Error al obtener el conteo actual:', error);
+      }
+    }
+
+    // Llamar a la función para obtener el conteo actual al cargar la página
+    fetchCurrentCount();
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+
+      const formData = new FormData(form);
+
+      try {
+        const response = await fetch(
+          'http://localhost/geminis_mail_dispacher/api/register.php',
+          {
+            method: 'POST',
+            body: formData,
+          }
+        );
+
+        const data = await response.json();
+
+        if (data.success) {
+          count = data.count;
+          countDisplay.textContent = count.toString();
+          availableSpotsDisplay.textContent = 100 - count;
+          countFloatButtonZoom.textContent = `${100 - count}`;
+
+          if (count >= maxCount) {
+            statusMessage.textContent =
+              'El límite de inscripciones ha sido alcanzado';
+            form.querySelector('button[type="submit"]').disabled = true;
+          } else {
+            statusMessage.textContent = `Inscritos: ${count}/${maxCount}`;
+          }
+        } else {
+          alert(data.message);
+        }
+      } catch (error) {
+        console.error('Error al enviar los datos:', error);
+        alert('Error al enviar los datos. Inténtalo de nuevo más tarde.');
+      }
+    });
+  });
+</script>

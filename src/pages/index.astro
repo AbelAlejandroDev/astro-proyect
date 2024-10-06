@@ -8,7 +8,9 @@ import Promo from '../components/landing/Promo.astro';
 import Works from '../components/landing/Works.astro';
 import TelegramGroup from '../components/landing/TelegramGroup.astro';
 import Loading from '../components/Loading.astro';
+import InscriptionForm from '../components/zoom/InscriptionForm.astro';
 import LayoutLanding from '../layouts/LayoutLanding.astro';
+import Zoom from '../components/zoom/Zoom.astro';
 ---
 
 <LayoutLanding title="Welcome to GENESIS.">
@@ -19,10 +21,11 @@ import LayoutLanding from '../layouts/LayoutLanding.astro';
   </header>
   <section class="lg:ml-80">
     <Home />
-    <TelegramGroup/>
+    <TelegramGroup />
     <Works />
     <Promo />
     <Asesoria />
+    <Zoom/>
     <Footer />
   </section>
 </LayoutLanding>

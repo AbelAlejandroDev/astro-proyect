@@ -29,13 +29,16 @@ import '../styles/global.css';
   <body class="lg:inline bg-[#151515]">
     <slot />
     <script>
+      // Animations
       const fadeElements = document.querySelectorAll('.fade-up');
 
       const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add('fade-up-active');
-            observer.unobserve(entry.target); // Desvincula el observer una vez que se activa la animación
+            // observer.unobserve(entry.target); // Desvincula el observer una vez que se activa la animación
+          } else {
+            entry.target.classList.remove('fade-up-active');
           }
         });
       });
