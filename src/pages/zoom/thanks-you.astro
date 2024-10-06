@@ -1,0 +1,104 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Ya estas incrito en el zoom">
+  <main class="h-screen w-screen flex flex-col items-center relative">
+    <div class="linear-gradient-2 absolute top-0 left-0 w-full h-full z-0">
+    </div>
+    <div class="linear-gradient-1 absolute top-0 left-0 w-full h-full z-0">
+    </div>
+    <div class="linear-gradient-3 absolute top-0 left-0 w-full h-full z-0">
+    </div>
+    <div
+      class="container-persentation relative z-10 flex flex-col items-center text-center h-full"
+    >
+      <h2 class="text-xl">
+        <p
+          class="text-white antialiased text-4xl block"
+          style="font-family:'bebas neue'"
+        >
+          ¡YA ESTAS INSCRITO!
+        </p>
+      </h2>
+      <h1 class="py-4 text-xl">
+        <p
+          class="text-white antialiased text-6xl block"
+          style="font-family:'bebas neue'"
+        >
+          EL SIGUIENTE PASO ES
+        </p>
+        <span
+          class="tracking-[2px] font-medium text-sm text-white antialiased py-2 block"
+        >
+          Haz clic en el botón de abajo para unirte a nuestro grupo exclusivo de
+          Telegram. Allí recibirás toda la información y los enlaces para la
+          clase en Zoom, además de estar al tanto de la fecha y hora.
+        </span>
+      </h1>
+      <div class="w-full flex justify-center py-4">
+        <div class="flex justify-center items-center mt-4 mb-8">
+          <a
+            href="https://calendly.com/genesisdma"
+            target="_blank"
+            rel="noopener"
+            class="py-2 px-8 bg-[#221E42] rounded-lg flex items-center justify-center gap-2 text-white hover:bg-[#1c1936] hover:gap-4 transition shadow-md shadow-blue-900"
+          >
+            UNÉTE
+            <img src="/icons/telegram.png" class="h-5 md:h-4 svg-transition" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  html {
+    background-color: black !important;
+  }
+
+  .container-persentation {
+    padding: 50px 20px;
+    max-width: 800px;
+  }
+
+  /* Gradients */
+  .linear-gradient-1 {
+    background: radial-gradient(
+      at left bottom,
+      rgba(51, 19, 194, 0.459),
+      transparent,
+      transparent
+    );
+  }
+  .linear-gradient-3 {
+    background: radial-gradient(
+      at right bottom,
+      rgba(51, 19, 194, 0.459),
+      transparent,
+      transparent
+    );
+  }
+  .linear-gradient-2 {
+    background: radial-gradient(
+      at center,
+      rgba(36, 1, 190, 0.6),
+      rgb(0, 0, 0),
+      rgb(0, 0, 0)
+    );
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .container-persentation {
+      padding: 20px 10px;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .linear-gradient-1 {
+      display: none;
+    }
+  }
+</style>

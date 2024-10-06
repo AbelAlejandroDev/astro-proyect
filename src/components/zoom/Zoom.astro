@@ -21,6 +21,13 @@
     <div class="flex items-center">
       <div class="flex flex-row flex-wrap gap-5">
         <input
+          type="text"
+          name="name"
+          class="required email text-white px-4 bg-transparent border-[2px] rounded-full py-[6px] w-[288px] mx-auto suscription-responsive"
+          placeholder="Nombre *"
+          required
+        />
+        <input
           type="email"
           name="email"
           class="required email text-white px-4 bg-transparent border-[2px] rounded-full py-[6px] w-[288px] mx-auto suscription-responsive"
@@ -126,6 +133,9 @@
           } else {
             statusMessage.textContent = `Inscritos: ${count}/${maxCount}`;
           }
+
+          // Redirigir a pagina de agradecimiento
+          window.location.href = 'https://genesisdma.com/zoom/thanks-you';
         } else {
           alert(data.message);
         }
