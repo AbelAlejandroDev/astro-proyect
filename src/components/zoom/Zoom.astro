@@ -77,14 +77,14 @@
     async function fetchCurrentCount() {
       try {
         const response = await fetch(
-          'http://localhost/geminis_mail_dispacher/api/get_count.php'
+          'https://genesisdma.com/api/get_count.php'
         );
         const data = await response.json();
 
         if (data.success) {
           count = data.count;
-          countDisplay.textContent = count;
-          availableSpotsDisplay.textContent = 100 - count;
+          countDisplay.textContent = count.toString();
+          availableSpotsDisplay.textContent = 100 - count + '';
           countFloatButtonZoom.textContent = `${100 - count}`;
         }
       } catch (error) {
@@ -102,7 +102,7 @@
 
       try {
         const response = await fetch(
-          'http://localhost/geminis_mail_dispacher/api/register.php',
+          'https://genesisdma.com/api/register.php',
           {
             method: 'POST',
             body: formData,
