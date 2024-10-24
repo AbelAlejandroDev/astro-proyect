@@ -1,12 +1,12 @@
-import React, { useState } from "react";
-import axios from "axios";
+import React, { useState } from 'react';
+import axios from 'axios';
 
 const Form = () => {
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    bussines: "",
+    name: '',
+    email: '',
+    phone: '',
+    bussines: '',
   });
   const [loading, setLoading] = useState(false); // Estado para el indicador de carga
 
@@ -24,24 +24,24 @@ const Form = () => {
 
     try {
       const response = await axios.post(
-        "https://genesisdma.com/api/send_mail.php",
+        'https://genesisdma.com/api/send_mail.php',
         formData
       );
 
-      console.log("Response received", response);
+      console.log('Response received', response);
 
-      if (response.data.status === "success") {
-        alert("Mensaje enviado con éxito!");
+      if (response.data.status === 'success') {
+        alert('Mensaje enviado con éxito!');
         // Redireccionamos a la página de agradecimiento
         setTimeout(() => {
-          window.location.href = "/thanks-you";
+          window.location.href = '/thanks-you';
         }, 1200);
       } else {
-        alert("Error al enviar el mensaje.");
+        alert('Error al enviar el mensaje.');
       }
     } catch (error) {
-      console.error("Error al enviar el mensaje:", error);
-      alert("Error al enviar el mensaje.");
+      console.error('Error al enviar el mensaje:', error);
+      alert('Error al enviar el mensaje.');
     } finally {
       setLoading(false); // Desactivar el indicador de carga
     }
@@ -52,7 +52,7 @@ const Form = () => {
       <div className="bg-[#005FEA] max-w-md flex flex-col mb-[-20px] text-white antialiased w-full py-4 rounded-t-2xl text-xl text-center font-medium">
         <h3 className="flex justify-center gap-2 items-center py-4">
           <img className="h-8" src="/icons/arrowDown.svg" alt="arrow down" />
-          Obtén ya la guía{" "}
+          Obtén ya la guía{' '}
           <img className="h-8" src="/icons/arrowDown.svg" alt="arrow down" />
         </h3>
         <small className="text-xs tracking-[1px] my-1 rounded-b-sm p-1 py-2 bg-[#221E42]">
