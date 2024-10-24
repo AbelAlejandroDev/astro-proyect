@@ -3,39 +3,46 @@
 ---
 
 <article id="curso" class="text-white bg-[#151515] py-6">
+  <div
+    class="relative h-[400px] xl:h-[400px] w-full bg-auto bg-center bg-[#151515] mt-[-10px] sm:mt-0 flex flex-col justify-center items-center"
+  >
+    <!--  Fondo lineal abajo -->
     <div
-      class="relative h-[400px] xl:h-[400px] w-full bg-auto bg-center bg-[#151515] mt-[-10px] sm:mt-0 flex flex-col justify-center items-center"
+      class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-b from-transparent to-[#151515]"
     >
-      <!--  Fondo lineal abajo -->
-      <div
-        class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-b from-transparent to-[#151515]"
-      >
-      </div>
-      <div class="px-5">
-        <h2 class="font-bold text-4xl lg:text-3xl text-center fade-up">
-          ¡ <strong class="text-blue-600 text-4xl">Accede al Curso</strong> !
-        </h2>
-      </div>
-      <div class="flex justify-center my-14">
-        <a
-          href="https://academy.genesisdma.com/offers/pUALm37E"
-          class="py-4 px-8 text-2xl bg-blue-600 rounded-lg flex items-center gap-2 hover:bg-blue-700 hover:gap-4 transition"
-        >
-          Acceder
-  
-          <img src="/icons/arrows-right.svg" class="h-6 svg-transition" />
-        </a>
-      </div>
     </div>
-  </article>
-  
-  <style>
-    .svg-transition {
-      transition: transform 0.3s ease-in-out;
-    }
-  
-    a:hover .svg-transition {
-      transform: translateX(5px);
-    }
-  </style>
-  
+    <div class="px-5">
+      <h2 class="font-bold text-4xl lg:text-3xl text-center fade-up">
+        ¡ <strong class="text-blue-600 text-4xl">Accede al Curso</strong> !
+      </h2>
+    </div>
+    <div class="flex flex-wrap justify-center gap-12 my-14">
+      <a
+        href="https://academy.genesisdma.com/offers/pUALm37E"
+        class="py-4 px-8 text-2xl bg-blue-600 rounded-lg flex items-center gap-2 hover:bg-blue-700 hover:gap-4 transition"
+      >
+        Obtener
+
+        <img src="/icons/arrows-right.svg" class="h-6 svg-transition" />
+      </a>
+      <a
+        href="academy.genesisdma.com/login"
+        class="py-4 px-8 text-2xl bg-blue-600 rounded-lg flex items-center gap-2 hover:bg-blue-700 hover:gap-4 transition"
+      >
+        Entrar
+
+        <img src="/icons/arrows-right.svg" class="h-6 svg-transition" />
+      </a>
+    </div>
+  </div>
+</article>
+
+<style>
+  .svg-transition {
+    transition: transform 0.3s ease-in-out;
+  }
+
+  a:hover .svg-transition {
+    transform: translateX(5px);
+  }
+</style>
