@@ -1,25 +1,41 @@
 ---
-// Home.astro
+import HeroVideoHome from './videos_hero/HeroVideoHome.astro';
 
+// Home.astro
 ---
 
 <article id="home" class="text-gray-600 bg-[#151515] body-font">
   <!-- Enlace Promocional -->
   <div class="relative z-20 bg-[#221E42] w-full text-white">
-    <a href="#promo-guia" class="block w-full relative z-30 text-center p-4 sm:p-6">
+    <a
+      href="#promo-guia"
+      class="block w-full relative z-30 text-center p-4 sm:p-6"
+    >
       ¡HAZ CLIC AQUÍ PARA OBTENER MI NUEVA GUÍA GRATIS!
     </a>
   </div>
+  <!-- Video Hero -->
+  <HeroVideoHome />
+
   <!-- Contenedor Principal con Imagen de Fondo -->
-  <div class="relative  h-[400px] xl:h-[60vh] w-full bg-cover bg-center sm:bg-[url('/Fondo_home.jpg')] bg-[url('/Fondo_mobile.jpg')]  mt-[-10px] sm:mt-0">
+  <div
+    class="relative h-[400px] xl:h-[60vh] w-full bg-cover bg-center sm:bg-[url('/Fondo_home.jpg')] bg-[url('/Fondo_mobile.jpg')] mt-[-10px] sm:mt-0"
+  >
     <!-- Fondo negro con opacidad para el texto -->
-    <div class="absolute inset-0 flex flex-col justify-start pt-10 items-center bg-black bg-opacity-50 text-white">
-      <h2 class="text-4xl xl:text-5xl z-10 md:text-5xl  text-center px-4 mb-[-10px]" style="font-family:'bebas neue'" >
+    <div
+      class="absolute inset-0 flex flex-col justify-start pt-10 items-center bg-black bg-opacity-50 text-white"
+    >
+      <h2
+        class="text-4xl xl:text-5xl z-10 md:text-5xl text-center px-4 mb-[-10px]"
+        style="font-family:'bebas neue'"
+      >
         "La mejor manera de predecir el futuro es crearlo
       </h2>
     </div>
     <!-- Div adicional con fondo lineal -->
-    <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-b from-transparent to-[#151515]"></div>
-  </div>
+    <div
+      class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-b from-transparent to-[#151515]"
+    >
+    </div>
   </div>
 </article>
